@@ -1,0 +1,17 @@
+SELECT country, count(ip) as hits FROM clickstreamdata GROUP BY country ORDER BY hits DESC;
+
+SELECT state, count(ip) as hits FROM clickstreamdata WHERE country = 'usa'
+GROUP BY state ORDER BY hits DESC;
+
+SELECT city, count(ip) as hits FROM clickstreamdata WHERE country = 'usa' and state = 'CA'
+GROUP BY city ORDER BY hits DESC;
+
+SELECT category, count(ip) as hits FROM clickstreamdata 
+WHERE country = 'usa' and state = 'CA' and city = 'los angeles'
+GROUP BY category ORDER BY hits DESC;
+
+SELECT gender_cd, age, count(ip) as hits FROM clickstreamdata 
+WHERE country = 'usa' and state = 'CA' and city = 'los angeles' and category = 'clothing'
+GROUP BY gender_cd, age ORDER BY hits DESC;
+
+SELECT url, count(url) as hits FROM clickstreamdata GROUP BY url ORDER BY hits;
