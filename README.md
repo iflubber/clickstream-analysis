@@ -66,8 +66,7 @@ revenue.
 
 ***Solution:***
 
-***Download the data** from
-[here](https://www.dropbox.com/s/zdnzosg3hvztu2w/Project-1.rar?dl=0).*
+***Download the data***
 
 ***Load the downloaded data onto HDFS**:*
 
