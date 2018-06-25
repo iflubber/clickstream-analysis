@@ -111,18 +111,15 @@ Let’s take a look at the data:
 
 Omniture.0.tsv
 
-![](./screenshots/media/image2.tiff){width="6.262328302712161in"
-height="4.626087051618548in"}
+![](./screenshots/media/image2.tiff)
 
 regusers.tsv
 
-![](./screenshots/media/image3.tiff){width="6.263141951006125in"
-height="3.7826082677165354in"}
+![](./screenshots/media/image3.tiff)
 
 urlmap.tsv
 
-![](./screenshots/media/image4.tiff){width="6.261484033245845in"
-height="4.365217629046369in"}
+![](./screenshots/media/image4.tiff)
 
 ***Create Hive Tables for the 3 data-sets:***
 
@@ -278,18 +275,15 @@ OVERWRITE INTO TABLE omnitureweblogs;
 
 select \* from omnitureweblogs limit 5
 
-![](./screenshots/media/image5.tiff){width="6.263888888888889in"
-height="1.179861111111111in"}
+![](./screenshots/media/image5.tiff)
 
 select \* from regusers limit 5
 
-![](./screenshots/media/image6.tiff){width="6.263888888888889in"
-height="1.2777777777777777in"}
+![](./screenshots/media/image6.tiff)
 
 select \* from urlmap limit 5
 
-![](./screenshots/media/image7.tiff){width="6.263888888888889in"
-height="1.3777777777777778in"}
+![](./screenshots/media/image7.tiff)
 
 ***Prepare the data for analysis:***
 
@@ -336,8 +330,7 @@ ON o.swid = concat('{', u.swid , '}');
 SELECT country, count(ip) as hits FROM clickstreamdata GROUP BY country
 ORDER BY hits DESC;
 
-![](./screenshots/media/image8.tiff){width="6.263888888888889in"
-height="7.98125in"}
+![](./screenshots/media/image8.tiff)
 
 As we can see, the maximum traffic is coming from USA. So, let’s dig
 deeper into US and check the number of hits by state in usa.
@@ -347,8 +340,7 @@ SELECT state, count(ip) as hits FROM clickstreamdata WHERE country =
 
 GROUP BY state ORDER BY hits DESC;
 
-![](./screenshots/media/image9.tiff){width="6.263888888888889in"
-height="8.54861111111111in"}
+![](./screenshots/media/image9.tiff)
 
 We can dig further deep into the cities:
 
@@ -357,8 +349,7 @@ SELECT city, count(ip) as hits FROM clickstreamdata WHERE country =
 
 GROUP BY city ORDER BY hits DESC;
 
-![](./screenshots/media/image10.tiff){width="6.263888888888889in"
-height="6.43125in"}
+![](./screenshots/media/image10.tiff)
 
 This shows that the largest number of page hits is coming from Los
 Angeles. Now, let’s find out what is being bought the most in Los
@@ -370,8 +361,7 @@ WHERE country = 'usa' and state = 'CA' and city = 'los angeles'
 
 GROUP BY category ORDER BY hits DESC;
 
-![](./screenshots/media/image11.tiff){width="6.263888888888889in"
-height="4.216666666666667in"}
+![](./screenshots/media/image11.tiff)
 
 We can see that the largest number of page hits in Los Angeles were for
 clothing, followed by shoes.
@@ -385,8 +375,7 @@ category = 'clothing'
 
 GROUP BY gender\_cd, age ORDER BY hits DESC;
 
-![](./screenshots/media/image12.tiff){width="6.263888888888889in"
-height="5.669564741907261in"}
+![](./screenshots/media/image12.tiff)
 
 We can derive a few insights from the above data:
 
@@ -404,8 +393,7 @@ Now let’s take a look at the bounce rate:
 SELECT url, count(url) as hits FROM clickstreamdata GROUP BY url ORDER
 BY hits
 
-![](./screenshots/media/image13.tiff){width="6.2621052055993in"
-height="1.6347823709536309in"}
+![](./screenshots/media/image13.tiff)
 
 The above pages are not getting many hits, so we might consider
 optimizing them.
@@ -430,41 +418,33 @@ can do various analysis:
 
 -- count of IP hits country-wise
 
-![](./screenshots/media/image14.tiff){width="6.263888888888889in"
-height="3.821527777777778in"}
+![](./screenshots/media/image14.tiff)
 
 -- count of IP hits in USA state-wise
 
-![](./screenshots/media/image15.tiff){width="6.263888888888889in"
-height="3.8159722222222223in"}
+![](./screenshots/media/image15.tiff)
 
 -- count of IP hits in the state of California in USA, city-wise
 
-![](./screenshots/media/image16.tiff){width="6.263888888888889in"
-height="3.807638888888889in"}
+![](./screenshots/media/image16.tiff)
 
 -- category information in every state
 
-![](./screenshots/media/image17.tiff){width="6.263888888888889in"
-height="4.7in"}
+![](./screenshots/media/image17.tiff)
 
 -- category information by age
 
-![](./screenshots/media/image18.tiff){width="6.263888888888889in"
-height="4.550694444444445in"}
+![](./screenshots/media/image18.tiff)
 
 -- category analysis by Age and Gender
 
-![](./screenshots/media/image19.tiff){width="6.263888888888889in"
-height="3.490972222222222in"}
+![](./screenshots/media/image19.tiff)
 
-![](./screenshots/media/image20.tiff){width="6.263888888888889in"
-height="3.475in"}
+![](./screenshots/media/image20.tiff)
 
 -- bounce rate analysis
 
-![](./screenshots/media/image21.tiff){width="6.263888888888889in"
-height="3.702777777777778in"}
+![](./screenshots/media/image21.tiff)
 
 ***Analysis in RStudio:***
 
@@ -472,40 +452,32 @@ Refer to *clickstream-analytics.R* script:
 
 -- pivot using R
 
-![](./screenshots/media/image22.tiff){width="6.263888888888889in"
-height="4.501388888888889in"}
+![](./screenshots/media/image22.tiff)
 
 -- clickstream data by country
 
-![](./screenshots/media/image23.tiff){width="6.263888888888889in"
-height="3.6875in"}
+![](./screenshots/media/image23.tiff)
 
 -- clickstream data by category
 
-![](./screenshots/media/image24.tiff){width="6.263888888888889in"
-height="3.4055555555555554in"}
+![](./screenshots/media/image24.tiff)
 
 -- clickstream data by city in USA
 
-![](./screenshots/media/image25.tiff){width="6.263888888888889in"
-height="3.415277777777778in"}
+![](./screenshots/media/image25.tiff)
 
 -- clickstream data by gender = male
 
-![](./screenshots/media/image26.tiff){width="6.263888888888889in"
-height="3.370138888888889in"}
+![](./screenshots/media/image26.tiff)
 
 -- clickstream data by gender = female
 
-![](./screenshots/media/image27.tiff){width="6.263888888888889in"
-height="3.4493055555555556in"}
+![](./screenshots/media/image27.tiff)
 
 -- clickstream data for male by age
 
-![](./screenshots/media/image28.tiff){width="6.263888888888889in"
-height="3.3756944444444446in"}
+![](./screenshots/media/image28.tiff)
 
 -- clickstream data for female by age
 
-![](./screenshots/media/image29.tiff){width="6.263888888888889in"
-height="3.3868055555555556in"}
+![](./screenshots/media/image29.tiff)
