@@ -105,8 +105,7 @@ Found 3 items
 -rw-r--r-- 1 cloudera cloudera 1522 2018-06-05 05:41
 /user/cloudera/clickstream-data/urlmap.tsv
 
-![](./screenshots/media/image1.tiff){width="6.263888888888889in"
-height="2.9217399387576553in"}
+![](./screenshots/media/image1.tiff)
 
 Let’s take a look at the data:
 
